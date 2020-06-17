@@ -18,8 +18,8 @@ class page{
         $this->footer = $footer;
 
         $config = array(
-            "tpl_dir"       => "src/views/",
-            "cache_dir"     => "src/views/cache",
+            "tpl_dir"       => "app/views/",
+            "cache_dir"     => "app/views/cache/",
             "debug"         =>true
         );
 
