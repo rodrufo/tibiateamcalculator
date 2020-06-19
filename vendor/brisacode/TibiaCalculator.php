@@ -12,6 +12,7 @@ class TibiaCalculator{
 private $partyData;
 private $numberOfPlayers;
 private $totalBalance;
+private $playersData;
 
 
 
@@ -54,12 +55,24 @@ public function GetTotalBalance(){
     return $this->totalBalance;
 }
 
+public function SetPlayersData($playersData){
+
+    $this->playersData = $playersData;
+}
+
+
+public function GetPlayersData(){
+
+    return $this->playersData;
+}
+
 
 
 
 public function __construct($partyData){
 
-    $this->SetPartyData($partyData); 
+    //concateno um "espaço" para capturar o healing do último membro da pt
+    $this->SetPartyData($partyData . " "); 
 
     $this->SetTotalBalance($this->FindTotalBalance());
     
@@ -100,7 +113,7 @@ public function FindPlayersData(){
 
     $partydata = $this->SanitazePartyData(); 
 
-    $playersAndBalance = [];
+    $playersData = [];
 
    for ($i=0; $i < $this->GetNumbersOfPlayers(); $i++) {     
 
@@ -116,11 +129,11 @@ public function FindPlayersData(){
 
     $healing = preg_replace("/[^0-9]/", "", $this->GetStringBetween($partydata, "Healing: ", " ")) ;
         
-    array_push($playersAndBalance, [
+    array_push($playersData, [
         "nome"     => $name,
-        "Loot"     => $loot,
-        "balance"  => $balance,
+        "loot"     => $loot,
         "Supplies" => $supplies,
+        "balance"  => $balance,        
         "damage"   => $damage,
         "healing"  => $healing
 
@@ -130,10 +143,10 @@ public function FindPlayersData(){
         
     }
  
+    $this->SetPlayersData($playersData);
     
-
-    //var_dump($partydata); 
-    return $playersAndBalance; 
+    return $playersData;
+    
     
 }
 
@@ -181,6 +194,12 @@ public function SanitazePartyData(){
     $cleanedData = str_replace("\n", "", $cleanedData);
 
     $cleanedData = str_replace("\r", "", $cleanedData);
+
+    $cleanedData = str_replace("\t", "", $cleanedData);
+
+    //$cleanedData = str_replace("%20", " ", $cleanedData);
+
+    
 
     return $cleanedData;
 }

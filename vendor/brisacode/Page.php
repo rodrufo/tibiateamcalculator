@@ -43,7 +43,7 @@ class page{
     }
 
 
-    public function gerarPagina($pagina,  $opts = [], $loop = [], $returnHTML = false)
+    public function Draw($pagina,  $opts = [], $loop = [], $returnHTML = false)
     {
 
         if (count($opts) > 0) {

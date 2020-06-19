@@ -5,5 +5,34 @@
 }
 
 body{
-    background-color: #ccc;
+    
+    font-family: sans-serif;
+}
+
+table{
+    width: 50vw;
+    height: 50vh;
+    margin: 0 auto;
+}
+
+.analyserdata{
+
+    width: 50vw;
+    margin: 0 auto;
+    height: 100px;
+    text-align: center;
+
+}
+
+input{
+    padding: 5px;
+    margin: 10px 0;
+}
+
+thead{
+font-size: 18pt;
+}
+
+tr{
+    color: gray;
 }
