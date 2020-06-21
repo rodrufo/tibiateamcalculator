@@ -27,13 +27,18 @@ btnsubmit.addEventListener("click", event => {
         .then(data => {
           var html = "<table><thead><tr><th>Nome</th><th>Loot</th><th>supply</th><th>balance</th><th>damage</th><th>healing</th></tr></thead><tbody>";
 
-          data.forEach(element => {
+          let sessiondate = `<p><strong>Session Date: </strong>${data.sessiondate} | <strong>Session Start: </strong>${data.sessionstart} | <strong>Session End: <strong> ${data.sessionend}</p>`;
+
+          document.querySelector("#sessiondate").innerHTML = sessiondate;
+          
+
+          data.players.forEach(element => {
 
             html+= "<tr>";
             
             html += `<th>${element.nome}</th>`
             html += `<th>${element.loot}</th>`
-            html += `<th>${element.Supplies}</th>`
+            html += `<th>${element.supplies}</th>`
             html += `<th>${element.balance}</th>`
             html += `<th>${element.damage}</th>`
             html += `<th>${element.healing}</th>`

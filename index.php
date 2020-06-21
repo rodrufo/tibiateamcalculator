@@ -11,10 +11,9 @@ $app = new \Slim\Slim();
 /**
  * Rota Home
  */
-$app->get('/', function () {
-
-	$page = new page(); 
+$app->get('/', function () {	
 	
+	$page = new page();	
 	$page->draw("home");
 
 });
@@ -30,8 +29,6 @@ require_once('./app/routes/api/calculatorRoutes.php');
 
 // Rotas de carregamento de views
 require_once('./app/routes/views/viewsRoutes.php');
-
-
 
 
 

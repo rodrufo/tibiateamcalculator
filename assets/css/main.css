@@ -36,3 +36,7 @@ font-size: 18pt;
 tr{
     color: gray;
 }
+
+#sessiondate{
+    text-align: center;
+}
