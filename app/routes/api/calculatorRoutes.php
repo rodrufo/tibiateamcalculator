@@ -1,6 +1,7 @@
 <?php
 
 use brisacode\TibiaCalculator;
+use brisacode\TibiaDataExtractor;
 
 $app->get('/api/PartyHuntanalyser', function () {
     echo "retorna a lógica para party hunt analyser";
@@ -11,9 +12,7 @@ $app->post('/api/analyser/getdata', function () {
 
    if( isset( $_POST['analyserData']) ){
 
-        $data = new TibiaCalculator($_POST['analyserData']); 
-        
-        $data->generateExtractedSessionData();
+        $data = new TibiaDataExtractor($_POST['analyserData']);        
 
         echo json_encode($data->getExtractedSessionData());
 
@@ -27,8 +26,6 @@ $app->post('/api/analyser/getdata', function () {
     }
     
 });
-
-
 
 $app->get('/teste', function () {
 
@@ -100,13 +97,10 @@ $app->get('/teste', function () {
         Healing: 0";
     
 
-        $data = new TibiaCalculator($analyserData); 
-        
-        $data->generateExtractedSessionData();
-
-        echo json_encode($data->getExtractedSessionData());
+        $data = new TibiaCalculator($analyserData);
         
 
+        var_dump($data->payments());
         
        
 
