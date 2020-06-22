@@ -259,7 +259,7 @@ public function findTotalBalance( $return = false ){
 
 public function findNumberOfPlayers( $return = false ){
 
-    $numberOfPlayers = substr_count($this->getPartyData(), "Balance:");
+    $numberOfPlayers = substr_count($this->getPartyData(), "Balance:") - 1;
 
     $this->setNumberOfPlayers($numberOfPlayers);
 
