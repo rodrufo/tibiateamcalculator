@@ -3,8 +3,7 @@
 require('./config.php');
 
 use slim\Slim;
-use brisacode\page;
-use brisacode\TibiaCalculator;
+use brisacode\Page;
 
 $app = new \Slim\Slim();
 

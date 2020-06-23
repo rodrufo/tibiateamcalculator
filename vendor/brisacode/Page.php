@@ -5,7 +5,7 @@ namespace brisacode;
 use Rain\Tpl;
 
 
-class page{
+class Page{
 
     private $header;
     private $footer;
