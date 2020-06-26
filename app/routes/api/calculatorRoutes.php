@@ -8,103 +8,55 @@ $app->get('/api/PartyHuntanalyser', function () {
 });
 
 
-$app->post('/api/analyser/getdata', function () {    
+$app->post('/api/analyser/getdata', function () {
 
-   if( isset( $_POST['analyserData']) ){
+    if (isset($_POST['analyserData'])) {
 
-        $data = new TibiaDataExtractor($_POST['analyserData']);        
+        $data = new TibiaDataExtractor($_POST['analyserData']);
 
         echo json_encode($data->getExtractedSessionData());
-
-    }else{
+    } else {
 
         echo json_encode([
-            "error"=>2222,
-            "msg"=>"Analyser data expected not found."
-
+            "error" => 2222,
+            "msg" => "Analyser data expected not found."
         ]);
     }
-    
 });
 
 $app->get('/teste', function () {
 
-    $analyserData = "Session data: From 2020-06-20, 19:40:01 to 2020-06-20, 20:02:13
-    Session: 00:22h
+    $analyserData = "Session data: From 2020-06-26, 13:08:28 to 2020-06-26, 14:48:41
+    Session: 01:40h
     Loot Type: Leader
-    Loot: 1,335,861
-    Supplies: 1,596,629
-    Balance: -260,768
-    Biro Devius
-        Loot: 157,401
-        Supplies: 97,558
-        Balance: 59,843
-        Damage: 347,501
-        Healing: 53,543
-    Huguera Cremosin
-        Loot: 180,027
-        Supplies: 261,440
-        Balance: -81,413
-        Damage: 284,383
-        Healing: 639,098
-    Kinawarloke
-        Loot: 51,626
-        Supplies: 188,380
-        Balance: -136,754
-        Damage: 124,875
-        Healing: 198,341
-    Oktoryz
-        Loot: 102,418
-        Supplies: 82,065
-        Balance: 20,353
-        Damage: 129,557
-        Healing: 52,946
-    Palla du lipe
-        Loot: 157,451
-        Supplies: 77,376
-        Balance: 80,075
-        Damage: 265,059
-        Healing: 22,450
-    Rods Rufo
-        Loot: 173,968
-        Supplies: 228,080
-        Balance: -54,112
-        Damage: 323,534
-        Healing: 4,001
-    Takash
-        Loot: 147,769
-        Supplies: 61,397
-        Balance: 86,372
-        Damage: 392,361
-        Healing: 36,518
-    Timatos
-        Loot: 151,309
-        Supplies: 73,189
-        Balance: 78,120
-        Damage: 382,782
-        Healing: 23,515
-    Umponeifeliz Valepordois
-        Loot: 96,300
-        Supplies: 294,119
-        Balance: -197,819
-        Damage: 184,412
-        Healing: 589,375
-    Xongu (Leader)
-        Loot: 117,592
-        Supplies: 233,025
-        Balance: -115,433
-        Damage: 362,761
-        Healing: 0";
-    
+    Loot: 2,527,880
+    Supplies: 889,216
+    Balance: 1,638,664
+    Bambamsz
+        Loot: 0
+        Supplies: 475,931
+        Balance: -475,931
+        Damage: 4,273,541
+        Healing: 2,679,044
+    Kall Aley (Leader)
+        Loot: 2,255,580
+        Supplies: 162,480
+        Balance: 2,093,100
+        Damage: 3,387,807
+        Healing: 81,342
+    Xongu
+        Loot: 272,300
+        Supplies: 250,805
+        Balance: 21,495
+        Damage: 4,464,107
+        Healing: 352,501
+    ";
 
-        $data = new TibiaCalculator($analyserData);
-        
 
-        var_dump($data->payments());
-        
-       
+    $data = new TibiaCalculator( $analyserData );
 
-       
+    echo json_encode( $data->getHigherHealing() );
+   
 });
 
 
