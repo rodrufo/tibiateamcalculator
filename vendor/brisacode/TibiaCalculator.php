@@ -201,7 +201,7 @@ class TibiaCalculator extends TibiaDataExtractor
         // $extractedData = new TibiaDataExtractor($this->getPartyData());
 
         $calculator = array(
-
+            'totalbalance' => 0,
             'individualBalance' => 0,
             'pay' => array(),
             'receiver' => array()
@@ -209,10 +209,11 @@ class TibiaCalculator extends TibiaDataExtractor
 
         $payments = array();
 
+        foreach ($this->getplayersData()['players'] as $i => $player)
+            $calculator['totalbalance'] += $player['balance'];
 
-        if ($this->getTotalBalance() != 0) {
-
-            $calculator['individualBalance'] = $this->getTotalBalance() / $this->getNumberOfPlayers();
+        if ($calculator['totalbalance'] != 0) {
+            $calculator['individualBalance'] = $calculator['totalbalance'] / $this->getNumberOfPlayers();
         }
 
         foreach ($this->getplayersData()['players'] as $i => $player) {
@@ -267,7 +268,7 @@ class TibiaCalculator extends TibiaDataExtractor
         }
 
         $payments =  array(
-            'totalbalance' => $this->getTotalBalance(),
+            'totalbalance' => $calculator['totalbalance'],
             'individualBalance' => round($calculator['individualBalance']),
             'payments' => $payments
         );
