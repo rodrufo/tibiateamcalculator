@@ -250,7 +250,7 @@ class TibiaDataExtractor
         $partyData = $this->getPartyData();
 
         $totalBalance = trim($this->getStringBetween($partyData, "Balance: ", " "));
-
+        $totalBalance = preg_replace("/[^0-9]/", "", $totalBalance);
         $totalBalance = str_replace(",", "", $totalBalance);
 
         $this->setTotalBalance($totalBalance);
