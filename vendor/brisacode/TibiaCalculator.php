@@ -12,11 +12,66 @@ class TibiaCalculator extends TibiaDataExtractor
     private $higherBalance = [];
     private $higherDamage = [];
     private $higherHealing = [];   
-
-
-
+    private $topListLoot = [];
+    private $topListSupplies = [];
+    private $topListBalance = [];
+    private $topListDamage = [];
+    private $topListHealing = [];   
     
+    public function getTopListHealing()
+    {
+        return $this->topListHealing;
+    }
+    
+    public function setTopListHealing($topListHealing)
+    {
+        $this->topListHealing = $topListHealing;
+        return $this;
+    }
+    
+    public function getTopListDamage()
+    {
+        return $this->topListDamage;
+    }
+    
+    public function setTopListDamage($topListDamage)
+    {
+        $this->topListDamage = $topListDamage;
+        return $this;
+    }
+    
+    public function getTopListBalance()
+    {
+        return $this->topListBalance;
+    }
+    
+    public function setTopListBalance($topListBalance)
+    {
+        $this->topListBalance = $topListBalance;
+        return $this;
+    }
 
+    public function getTopListSupplies()
+    {
+        return $this->topListSupplies;
+    }
+    
+    public function setTopListSupplies($topListSupplies)
+    {
+        $this->topListSupplies = $topListSupplies;
+        return $this;
+    }
+
+    public function getTopListLoot()
+    {
+        return $this->topListLoot;
+    }
+    
+    public function setTopListLoot($topListLoot)
+    {
+        $this->topListLoot = $topListLoot;
+        return $this;
+    }
     /**
      * Get the value of payments
      */
@@ -132,11 +187,13 @@ class TibiaCalculator extends TibiaDataExtractor
         $this->findHigherSupplies();
         $this->findHigherBalance();
         $this->findHigherHealing();
+        
+        $topLists = array('loot','supplies','damage','healing','balance');
+        foreach ($topLists as $list) {
+            $method = 'setTopList' . ucfirst($list);
+            $this->{$method}($this->findTopList($list));
+        }
     }
-
-    
-
-
 
     public function findpayments()
     {
@@ -311,8 +368,6 @@ class TibiaCalculator extends TibiaDataExtractor
         
     }
     
-
-
     public function findHigher( $serchedKey ){         
         
         $players = $this->getPlayersData()['players'];
@@ -329,19 +384,26 @@ class TibiaCalculator extends TibiaDataExtractor
         return $higher;
 
     }
-
-
-
-
-
-
-
-
-
-
     
+    public function findTopList( $serchedKey ){         
+        
+        $players = $this->getPlayersData()['players'];
+        
+        $topList = array();
 
-    
+        foreach ( $players as $key => $value ) 
+            $topList[$value['name']] = $value[$serchedKey];
+
+        arsort($topList);
+        
+        $topListOrdered = array();
+        
+        foreach ( $topList as $name => $value )
+            $topListOrdered[] = array('name' => $name, 'value' => $value);
+        
+        return $topListOrdered;
+
+    }
 
     
 }
