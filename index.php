@@ -23,6 +23,13 @@ $app->get('/', function () {
  * Inclusão de rotas
  */
 
+$app->get('/brisa', function () {	
+	
+	$page = new page();	
+	$page->draw("brisa");
+
+});
+
 // Rotas da api de calculo
 require_once('./app/routes/api/calculatorRoutes.php');
 
