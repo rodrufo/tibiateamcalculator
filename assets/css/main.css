@@ -5,38 +5,94 @@
 }
 
 body{
-    
-    font-family: sans-serif;
+    font-family: "Verdana", Geneva, sans-serif;
 }
 
-table{
-    width: 50vw;
-    height: 50vh;
+#analyser-form{
     margin: 0 auto;
-}
-
-.analyserdata{
-
-    width: 50vw;
-    margin: 0 auto;
-    height: 100px;
     text-align: center;
-
-}
-
-input{
-    padding: 5px;
-    margin: 10px 0;
-}
-
-thead{
-font-size: 18pt;
-}
-
-tr{
-    color: gray;
 }
 
 #sessiondate{
     text-align: center;
+}
+
+#container {
+    color: #333;
+    width: 70%;
+    min-width: 960px;
+    margin: auto;
+    padding: 2% 0 5% 0;
+}
+header {
+    text-align: center;
+    overflow: hidden;
+}
+.ui-widget-header a, h1 a {
+    font-size: .8em;
+    text-decoration: none;
+    color: #f58400;
+    padding: .5% 1%;
+}
+.ui-widget-header a:hover {
+    background: #f58400;
+    color: #333;
+}
+header h1 {
+    margin: 0;
+    padding: 1% 0 0 0;
+}
+
+.ui-widget {
+    font-size: 1.4em;
+}
+
+.ui-widget-content a {
+    color: #f58400;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+}
+
+h1 {
+    margin-bottom: 2%;
+}
+h4 {
+    margin: 2% 0;
+}
+p {
+    margin-bottom: 1%;
+}
+
+ul {
+    margin-left: 5%;
+}
+ul li {
+    list-style: decimal;
+}
+
+textarea {
+    font-weight: bold;
+    margin: 4% auto;
+    padding: 2%;
+    font-size: .8em;
+    border: 1px solid #555;
+    color: #f58400;
+    display: block;
+    width: 80%;
+    overflow: auto;
+}
+
+footer {
+    padding: 1% 0;
+    text-align: center;
+    font-size: .6em;
+    position: relative;
+    bottom: 0;
+}
+
+#result {
+    display: none;
+    margin-top: 4%;
+    padding: 1% 2%;
 }

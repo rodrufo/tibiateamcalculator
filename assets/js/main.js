@@ -1,67 +1,71 @@
-const Url = 'http://tibiateamcalculator.test/api/analyser/getdata';
+const Url = 'http://huntcalc.localhost/api/analyser/getdata';
 
 const btnsubmit = document.querySelector("#btn-submit");
 
 btnsubmit.addEventListener("click", event => {
     event.preventDefault();
 
-    const analyserData = document.querySelector("#analyser-form input").value;
+    const analyserData = document.querySelector("#analyser-form textarea").value;
 
-    
+    if (analyserData === '') {
 
-    if( analyserData === '' ){
+        alert("Dados do analyser não encontrados.");
 
-        alert("Dados do analyser não encontrados");
+    } else {
 
-    }else{
 
-        
-        fetch(Url,{
-          method: 'POST',
-          headers: {        
-            "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
-          },
-          body: `analyserData=${analyserData}`
+        fetch(Url, {
+            method: 'POST',
+            headers: {
+                "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+            },
+            body: `analyserData=${analyserData}`
         })
-        .then(res => res.json())        
-        .then(data => {
-          var html = "<table><thead><tr><th>Nome</th><th>Loot</th><th>supply</th><th>balance</th><th>damage</th><th>healing</th></tr></thead><tbody>";
+                .then(res => res.json())
+                .then(data => {
 
-          let sessiondate = `<p><strong>Session Date: </strong>${data.sessiondate} | <strong>Session Start: </strong>${data.sessionstart} | <strong>Session End: <strong> ${data.sessionend}</p>`;
+                    let html = `<h4>RESULTADO DO CÁLCULO</h4>`;
 
-          document.querySelector("#sessiondate").innerHTML = sessiondate;
-          
+                    situation = data.payments.totalbalance > 0 ? 'LUCRO' : 'PREJUÍZO';
 
-          data.players.forEach(element => {
+                    html += `<p>O ${situation} da hunt foi de ${data.payments.totalbalance}.</p>`;
+                    html += `<p>O ${situation} INDIVIDUAL foi de ${data.payments.individualBalance}.</p>`;
+                    html += '<ul>';
 
-            html+= "<tr>";
-            
-            html += `<th>${element.nome}</th>`
-            html += `<th>${element.loot}</th>`
-            html += `<th>${element.supplies}</th>`
-            html += `<th>${element.balance}</th>`
-            html += `<th>${element.damage}</th>`
-            html += `<th>${element.healing}</th>`
-            
+                    data.payments.payments.forEach(payment => {
 
-            html+= "</tr>";
-          });     
+                        html += `<li>${payment.payer}: transfer ${payment.value} to ${payment.receiver}</li>`;
 
-          html += "</tbody></table>";
-          
-          
-          let tabledata = document.querySelector("#table-data");
+                    });
 
-          tabledata.insertAdjacentHTML('beforeend',html);
-          
-        })
-        .catch(error => console.log(error))
+                    html += '</ul>';
+
+                    html += generateTopList(data.topListDamage, 'TOP DAMAGE');
+                    html += generateTopList(data.topListHealing, 'TOP HEALING');
+                    html += generateTopList(data.topListBalance, 'TOP BALANCE');
+                    html += generateTopList(data.topListLoot, 'TOP LOOT');
+                    html += generateTopList(data.topListSupplies, 'TOP SUPPLIES');
+
+                    document.querySelector("#result").innerHTML = html;
+                    document.querySelector("#result").style = 'display:block';
+                    window.location.href = '#btn-submit';
+                })
+                .catch(error => console.log(error));
 
 
     }
 
-
 });
+
+function generateTopList(list, title) {
+    let html = `<h4>${title}</h4>`;
+    html += '<ul>';
+    list.forEach(player => {
+        html += `<li>${player.name} (${player.value})</li>`;
+    });
+    html += '</ul>';
+    return html;
+}
 
 
 
