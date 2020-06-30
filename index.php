@@ -8,20 +8,11 @@ use brisacode\TibiaCalculator;
 
 $app = new \Slim\Slim();
 
-/**
- * Rota Home
- */
-$app->get('/', function () {	
-	
-	$page = new page();	
-	$page->draw("home");
-
-});
-
 
 /**
  * Inclusão de rotas
  */
+
 
 // Rotas da api de calculo
 require_once('./app/routes/api/calculatorRoutes.php');

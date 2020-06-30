@@ -1,5 +1,20 @@
 <?php
 
-$app->get('/partyhuntanalyser', function () {
-    echo "retorna view da página de party hunt analyser";
+use brisacode\Page;
+
+$app->get('/', function () {	
+	
+	$page = new page();	
+	$page->draw("home");
+
 });
+
+
+$app->get('/brisa', function () {	
+	
+	$page = new page();	
+	$page->draw("brisa");
+
+});
+
+

@@ -6,17 +6,74 @@ namespace brisacode;
 class TibiaCalculator extends TibiaDataExtractor
 {
 
-    private $payments = [];    
-    private $higherLoot = [];
-    private $higherSupplies = [];
-    private $higherBalance = [];
-    private $higherDamage = [];
-    private $higherHealing = [];   
-
-
-
+    private $payments = [];      
+    private $topListLoot = [];
+    private $topListSupplies = [];
+    private $topListBalance = [];
+    private $topListDamage = [];
+    private $topListHealing = []; 
+    private $topLists = [
+        'loot',
+        'supplies',
+        'damage',
+        'healing',
+        'balance'
+    ];
     
+    public function getTopListHealing()
+    {
+        return $this->topListHealing;
+    }
+    
+    public function setTopListHealing($topListHealing)
+    {
+        $this->topListHealing = $topListHealing;
+        return $this;
+    }
+    
+    public function getTopListDamage()
+    {
+        return $this->topListDamage;
+    }
+    
+    public function setTopListDamage($topListDamage)
+    {
+        $this->topListDamage = $topListDamage;
+        return $this;
+    }
+    
+    public function getTopListBalance()
+    {
+        return $this->topListBalance;
+    }
+    
+    public function setTopListBalance($topListBalance)
+    {
+        $this->topListBalance = $topListBalance;
+        return $this;
+    }
 
+    public function getTopListSupplies()
+    {
+        return $this->topListSupplies;
+    }
+    
+    public function setTopListSupplies($topListSupplies)
+    {
+        $this->topListSupplies = $topListSupplies;
+        return $this;
+    }
+
+    public function getTopListLoot()
+    {
+        return $this->topListLoot;
+    }
+    
+    public function setTopListLoot($topListLoot)
+    {
+        $this->topListLoot = $topListLoot;
+        return $this;
+    }
     /**
      * Get the value of payments
      */
@@ -120,31 +177,48 @@ class TibiaCalculator extends TibiaDataExtractor
         return $this;
     }
 
-
-
-    public function __construct( $analyserData )
+    /**
+     * Get the value of topLists
+     */ 
+    public function getTopLists()
     {
-
-        parent::__construct($analyserData);
-
-        $this->findpayments();
-        $this->findHigherDamage();
-        $this->findHigherSupplies();
-        $this->findHigherBalance();
-        $this->findHigherHealing();
+        return $this->topLists;
     }
 
-    
-
-
-
-    public function findpayments()
+    /**
+     * Set the value of topLists
+     *
+     * @return  self
+     */ 
+    public function setTopLists( $topLists )
     {
+        $this->topLists = $topLists;
 
-        // $extractedData = new TibiaDataExtractor($this->getPartyData());
+        return $this;
+    }
+
+
+
+    public function __construct( $analyserData ){
+
+        parent::__construct( $analyserData ); 
+        
+        $this->findpayments();
+
+        foreach ( $this->getTopLists() as $list ) {
+            
+            $method = 'setTopList' . ucfirst( $list );
+
+            $this->{ $method }( $this->findTopList( $list ) );
+        }
+    }
+
+
+
+    public function findpayments(){        
 
         $calculator = array(
-
+            'totalbalance' => 0,
             'individualBalance' => 0,
             'pay' => array(),
             'receiver' => array()
@@ -152,10 +226,11 @@ class TibiaCalculator extends TibiaDataExtractor
 
         $payments = array();
 
+        foreach ( $this->getplayersData()['players'] as $i => $player )
+            $calculator['totalbalance'] += $player['balance'];
 
-        if ($this->getTotalBalance() != 0) {
-
-            $calculator['individualBalance'] = $this->getTotalBalance() / $this->getNumberOfPlayers();
+        if ($calculator['totalbalance'] != 0) {
+            $calculator['individualBalance'] = $calculator['totalbalance'] / $this->getNumberOfPlayers();
         }
 
         foreach ($this->getplayersData()['players'] as $i => $player) {
@@ -210,7 +285,7 @@ class TibiaCalculator extends TibiaDataExtractor
         }
 
         $payments =  array(
-            'totalbalance' => $this->getTotalBalance(),
+            'totalbalance' => $calculator['totalbalance'],
             'individualBalance' => round($calculator['individualBalance']),
             'payments' => $payments
         );
@@ -218,128 +293,33 @@ class TibiaCalculator extends TibiaDataExtractor
         $this->setPayments($payments);
     }
 
-
-
-
-   public function findHigherDamage(){ 
-       
-        $higherDamage = $this->findHigher('damage');
-
-        $higherDamageArr = [];
-
-        foreach ($this->getPlayersData()['players'] as $key => $value) {            
-
-            if( $value['damage'] == $higherDamage ){
-
-                array_push( $higherDamageArr, [
-                    'name' => $value['name'],
-                    'damage' => $value['damage']
-                    
-                ] );
-            }            
-        }
-
-        $this->setHigherDamage($higherDamageArr);
-        
-    }
-
-
-    public function findHigherSupplies(){ 
-       
-        $higherSupplies = $this->findHigher('supplies');
-
-        $higherSuppliesArr = [];
-
-        foreach ($this->getPlayersData()['players'] as $key => $value) {            
-
-            if( $value['supplies'] == $higherSupplies ){
-
-                array_push( $higherSuppliesArr, [
-                    'name'=> $value['name'],
-                    'supplies'=> $value['supplies']
-                ]);
-            }            
-        }
-
-        $this->setHigherSupplies($higherSuppliesArr);
-        
-    }
+   
     
-
-
-
-    public function findHigherBalance(){
-
-        $higherBalance = $this->findHigher('balance');
-
-        $higherBalanceArr = [];
-
-        foreach ($this->getPlayersData()['players'] as $key => $value) {            
-
-            if( $value['balance'] == $higherBalance){
-
-                array_push( $higherBalanceArr, [
-                    'name'=> $value['name'],
-                    'balance'=> $value['balance']
-                ]);
-            }            
-        }
-
-        $this->setHigherBalance($higherBalanceArr);
-    }
-
-
-
-    public function findHigherHealing(){
-
-        $higherHealing = $this->findHigher('healing');
-
-        $higherHealingArr = [];
-
-        foreach ($this->getPlayersData()['players'] as $key => $value) {            
-
-            if( $value['healing'] == $higherHealing){
-
-                array_push( $higherHealingArr, [
-                    'name'=> $value['name'],
-                    'healing'=> $value['healing']
-                ]);
-            }            
-        }
-
-        $this->setHigherhealing($higherHealingArr);
-        
-    }
-    
-
-
-    public function findHigher( $serchedKey ){         
+    public function findTopList( $serchedKey ){         
         
         $players = $this->getPlayersData()['players'];
-        $higher = 0;
+        
+        $topList = [];
 
-        foreach ( $players as $key => $value ) {            
-            
-            if( $value[$serchedKey] > $higher ){ 
+        foreach ( $players as $key => $value ) 
 
-                $higher = $value[$serchedKey];                
-            }    
-        }       
+        $topList[$value['name']] = $value[$serchedKey];
 
-        return $higher;
+        arsort( $topList );
+        
+        $topListOrdered = [];
+        
+        foreach ( $topList as $name => $value )
+        
+            $topListOrdered[] = [
+
+                'name' => $name, 
+                'value' => $value
+            ];
+        
+        return $topListOrdered;
 
     }
-
-
-
-
-
-
-
-
-
-
-    
 
     
 

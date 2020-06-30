@@ -11,10 +11,18 @@ $app->get('/api/PartyHuntanalyser', function () {
 $app->post('/api/analyser/getdata', function () {
 
     if (isset($_POST['analyserData'])) {
+        $data = new TibiaCalculator($_POST['analyserData']);
 
-        $data = new TibiaDataExtractor($_POST['analyserData']);
+        $response = array(
+            'payments' => $data->getPayments(),
+            'topListLoot' => $data->getTopListLoot(),
+            'topListSupplies' => $data->getTopListSupplies(),
+            'topListBalance' => $data->getTopListBalance(),
+            'topListDamage' => $data->getTopListDamage(),
+            'topListHealing' => $data->getTopListHealing()
+        );
 
-        echo json_encode($data->getExtractedSessionData());
+        echo json_encode($response);
     } else {
 
         echo json_encode([
@@ -26,37 +34,46 @@ $app->post('/api/analyser/getdata', function () {
 
 $app->get('/teste', function () {
 
-    $analyserData = "Session data: From 2020-06-26, 13:08:28 to 2020-06-26, 14:48:41
-    Session: 01:40h
-    Loot Type: Leader
-    Loot: 2,527,880
-    Supplies: 889,216
-    Balance: 1,638,664
-    Bambamsz
-        Loot: 0
-        Supplies: 475,931
-        Balance: -475,931
-        Damage: 4,273,541
-        Healing: 2,679,044
-    Kall Aley (Leader)
-        Loot: 2,255,580
-        Supplies: 162,480
-        Balance: 2,093,100
-        Damage: 3,387,807
-        Healing: 81,342
-    Xongu
-        Loot: 272,300
-        Supplies: 250,805
-        Balance: 21,495
-        Damage: 4,464,107
-        Healing: 352,501
-    ";
+    $analyserData = "Session data: From 2020-06-27, 15:28:06 to 2020-06-27, 17:00:06
+	Session: 01:32h
+	Loot Type: Leader
+	Loot: 2,299,000
+	Supplies: 1,151,690
+	Balance: 1,147,310
+	Bambamsz
+		Loot: 0
+		Supplies: 537,069
+		Balance: -537,069
+		Damage: 3,328,708
+		Healing: 2,290,161
+	Kall Aley (Leader)
+		Loot: 1,762,070
+		Supplies: 146,515
+		Balance: 1,615,555
+		Damage: 2,719,248
+		Healing: 86,654
+	King Zarug
+		Loot: 531,380
+		Supplies: 225,025
+		Balance: 306,355
+		Damage: 1,933,417
+		Healing: 220,804
+	Xongu
+		Loot: 5,550
+		Supplies: 243,081
+		Balance: -237,531
+		Damage: 4,056,825
+		Healing: 336,930";
 
 
-    $data = new TibiaCalculator( $analyserData );
+    $data = new TibiaCalculator($analyserData);
 
-    echo json_encode( $data->getHigherHealing() );
-   
+    $response = array(
+        'payments' => $data->getPayments(),
+        
+    );
+
+    echo json_encode($response);
 });
 
 

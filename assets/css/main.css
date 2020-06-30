@@ -1,42 +1,150 @@
+/*
+* Fontes
+*
+*/
+
+@font-face {
+    font-family: ShadowsIntoLight;
+    src: url('/assets/fonts/ShadowsIntoLight-Regular.ttf');
+}
+
+
+
+
+
+
+
+
 *{
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
+a{
+    text-decoration: none;
+    color: #ffff;
+}
+
+
+
 body{
+    width: 1366px;
+    margin: 0 auto;    
+    background-color: #23272a;
+    color: #ffff;
+    font-family: ShadowsIntoLight;
+}
+
+header h1{
+    font-size: 40pt;
+    text-align: center;
+    margin-left: 170px;
+}
+
+
+
+header h1::after {
+    content: "By Guild Brisa";
+    position: relative;
+    font-size: 24pt;
+    top: 39px;
+    right: 170px;
+  }
+
+  figcaption{
+    display: none;
+  }
+
+  figure{
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 7%;
+  }
+  
+  img{
+      width: 100%;
+  }
+
+  .arrow{
+      width: 10%;
+  }
+
+  .datainput{
     
-    font-family: sans-serif;
-}
+    display: flex;
+    flex-direction: column;
+  }
 
-table{
-    width: 50vw;
-    height: 50vh;
+  .wheretoinsert{
+      text-align: center;
+      font-size: 40pt;
+  }
+
+  .wheretoinsert::after{
+    content: "";
+    background-image: url(/src/images/fancy-arrow-png-9.png);
+    display: inline-block;
+    width: 150px;
+    height: 140px;
+    background-size: 180px;
+    background-repeat: no-repeat;
+    position: absolute;
+    margin: 50px 0 0 -90px;
+
+  }
+
+  .datainput{
+    width: 50%;
     margin: 0 auto;
-}
+    margin-top: 107px;
+  }
 
-.analyserdata{
-
-    width: 50vw;
-    margin: 0 auto;
-    height: 100px;
-    text-align: center;
-
-}
-
-input{
+  textarea{
     padding: 5px;
-    margin: 10px 0;
-}
+    box-shadow: 10px 7px 30px rgba(0,0,0,.1);
+    color: white;
+    background-color: #5b666d;
+  }
 
-thead{
-font-size: 18pt;
-}
+  #btn-calculator{
+      padding: 5px;
+      margin: 0 auto;
+      margin-top: 15px;
+      width: 50%;
+      background-color: #4e5d8b;
+      font-family: ShadowsIntoLight;
+      font-size: 24pt;
+      color: white;
+     
+  }
 
-tr{
-    color: gray;
-}
+  #btn-calculator:hover{
+    font-weight: bolder;
+    cursor: pointer;
+  }
+  
+  ::placeholder { 
+    color: white;
+    opacity: 1; 
+    font-family: ShadowsIntoLight;
+    font-size: 18pt;
+  }
 
-#sessiondate{
+  footer{
+      margin-top: 100px;
+      text-align: center;
+  }
+  .footerimage{
     text-align: center;
-}
+  }
+  .footerimage img{
+
+    width: 30%;
+    
+  }
+
+  p{
+      font-size: 18pt;
+  }
