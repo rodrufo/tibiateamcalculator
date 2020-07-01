@@ -1,4 +1,4 @@
-const Url = 'http://huntcalc.localhost/api/analyser/getdata';
+const Url = '/api/analyser/getdata';
 
 const btnsubmit = document.querySelector("#btn-submit");
 
