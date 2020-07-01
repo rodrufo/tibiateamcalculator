@@ -15,11 +15,14 @@
     
 <div class="datainput">
 
+<form id="toresult" action="/result" method="POST">
     <textarea name="partyanalyser" id="partyanalyser" ></textarea>
 
-    <input id="btn-calculator" type="button" value="Calcular">
+    <input id="btn-calculator" type="submit" value="Calcular">
 
 
-</div>
+    </div>
+
+</form>
 
 </section>

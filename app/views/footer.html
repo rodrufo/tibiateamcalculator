@@ -17,7 +17,7 @@
     <br><br>
 
     <p>Gostou do Projeto? Divulgue-o para seus amigos.</p>
-    <p>Quer apoiar o projeto? Envie sua doação de tibia coins para ${donationplayer}</p>
+    <p>Quer apoiar o projeto? Envie sua doação de tibia coins para </p>
 
 
 

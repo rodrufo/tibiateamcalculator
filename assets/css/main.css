@@ -10,6 +10,10 @@
 
 
 
+@font-face {
+  font-family: Handlee-Regular;
+  src: url('/assets/fonts/Handlee-Regular.ttf');
+}
 
 
 
@@ -37,9 +41,9 @@ body{
 }
 
 header h1{
-    font-size: 40pt;
+    font-size: 30pt;
     text-align: center;
-    margin-left: 170px;
+    margin-left: 125px;
 }
 
 
@@ -47,9 +51,9 @@ header h1{
 header h1::after {
     content: "By Guild Brisa";
     position: relative;
-    font-size: 24pt;
-    top: 39px;
-    right: 170px;
+    font-size: 15pt;
+    top: 29px;
+    right: 119px;
   }
 
   figcaption{
@@ -60,11 +64,11 @@ header h1::after {
     width: 50%;
     margin: 0 auto;
     text-align: center;
-    margin-top: 7%;
+    margin-top: 3%;
   }
   
   img{
-      width: 100%;
+      width: 70%;
   }
 
   .arrow{
@@ -86,19 +90,23 @@ header h1::after {
     content: "";
     background-image: url(/src/images/fancy-arrow-png-9.png);
     display: inline-block;
-    width: 150px;
-    height: 140px;
-    background-size: 180px;
+    width: 106px;
+    height: 100px;
+    background-size: 130px;
     background-repeat: no-repeat;
     position: absolute;
-    margin: 50px 0 0 -90px;
+    margin: 55px 0 0 -68px;
 
+  }
+
+  form{
+    text-align: center;
   }
 
   .datainput{
     width: 50%;
     margin: 0 auto;
-    margin-top: 107px;
+    margin-top: 70px;
   }
 
   textarea{
@@ -106,6 +114,7 @@ header h1::after {
     box-shadow: 10px 7px 30px rgba(0,0,0,.1);
     color: white;
     background-color: #5b666d;
+    width: 100%;
   }
 
   #btn-calculator{
@@ -133,7 +142,7 @@ header h1::after {
   }
 
   footer{
-      margin-top: 100px;
+      margin-top: 40px;
       text-align: center;
   }
   .footerimage{
@@ -148,3 +157,61 @@ header h1::after {
   p{
       font-size: 18pt;
   }
+
+
+
+  .error{
+    border: 1px solid red;
+    animation: nono 300ms;
+	  animation-iteration-count: 2;
+  }
+
+  @keyframes nono{
+    0%{
+        transform: translateX(0);
+    }
+    35%{
+        transform: translateX(-15%);
+    }
+    70%{
+        transform: translateX(15%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+.calculator-result{
+  font-family: Handlee-Regular;
+  font-size: 16pt;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.topdata{
+  display: flex;
+  justify-content: space-around;
+}
+
+.profit{
+  color: rgb(30, 156, 30);
+  
+  
+}
+.waste{
+  color: red;
+  
+  
+}
+
+.howmuch-to-pay{
+  color: #ca7474;
+}
+
+.payer{
+  font-weight: bold;
+}
+
+.receiver{
+  font-weight: bold;
+}

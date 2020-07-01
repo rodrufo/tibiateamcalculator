@@ -314,11 +314,34 @@ class TibiaCalculator extends TibiaDataExtractor
             $topListOrdered[] = [
 
                 'name' => $name, 
-                'value' => $value
+                $serchedKey => $value
             ];
         
         return $topListOrdered;
 
+    }
+
+
+    public function getTopData(){
+      
+        $resultData = [];        
+        $topListLoot = $this->getTopListLoot();
+        $topListSupplies = $this->getTopListSupplies();
+        $topListBalance = $this->getTopListBalance();
+        $topListDamage = $this->getTopListDamage();
+        $topListHealing = $this->getTopListHealing();
+
+        array_push($resultData, [             
+            'toploot'=>$topListLoot, 
+            'topsupplies'=>$topListSupplies, 
+            'topbalance'=>$topListBalance, 
+            'topdamage'=>$topListDamage, 
+            'tophealing'=>$topListHealing
+        ]);
+
+        return $resultData[0];
+
+        
     }
 
     
