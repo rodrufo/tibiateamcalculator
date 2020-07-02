@@ -24,6 +24,8 @@
             <li class="whoandhowmuch"> <span class="payer"><?php echo htmlspecialchars( $value1["payer"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span> deve pagar <span class="howmuch-to-pay"><?php echo htmlspecialchars( $value1["value"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span> para <span class="receiver"><?php echo htmlspecialchars( $value1["receiver"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>  ( transfer <?php echo htmlspecialchars( $value1["value"], ENT_COMPAT, 'UTF-8', FALSE ); ?> to <?php echo htmlspecialchars( $value1["receiver"], ENT_COMPAT, 'UTF-8', FALSE ); ?> ) <button class="copyToClipboard" value="transfer <?php echo htmlspecialchars( $value1["value"], ENT_COMPAT, 'UTF-8', FALSE ); ?> to <?php echo htmlspecialchars( $value1["receiver"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">Copiar</button></li>            
             
         <?php } ?>
+
+        <button id="copyAll" class="copyAll" value="<?php $counter1=-1;  if( isset($sessiondata["payments"]) && ( is_array($sessiondata["payments"]) || $sessiondata["payments"] instanceof Traversable ) && sizeof($sessiondata["payments"]) ) foreach( $sessiondata["payments"] as $key1 => $value1 ){ $counter1++; ?> <?php echo htmlspecialchars( $value1["payer"], ENT_COMPAT, 'UTF-8', FALSE ); ?> para <?php echo htmlspecialchars( $value1["receiver"], ENT_COMPAT, 'UTF-8', FALSE ); ?> ( transfer <?php echo htmlspecialchars( $value1["value"], ENT_COMPAT, 'UTF-8', FALSE ); ?> to <?php echo htmlspecialchars( $value1["receiver"], ENT_COMPAT, 'UTF-8', FALSE ); ?> )&#13;&#10;<?php } ?>">Copiar Todos</button>
     </ul>
 
    </div><br>
