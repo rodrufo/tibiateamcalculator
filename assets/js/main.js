@@ -1,5 +1,14 @@
 const btnCalc = document.querySelector("#btn-calculator")
 const analyserData = document.querySelector("#partyanalyser")
+const copyToElement = document.querySelectorAll(".copyToClipboard")
+
+copyToElement.forEach( ( transferMsg, key )  => {
+
+    transferMsg.addEventListener("click", event => copyToClipboard(transferMsg.value) )
+
+})
+
+
 
 
 if( analyserData ){
@@ -21,6 +30,29 @@ if( analyserData ){
     })
 }
 
+
+
+function copyToClipboard( transferMsg ){ 
+
+    
+    let attrid = "copytoclipboard"  
+    let container = document.querySelector("#container")     
+    let input = document.createElement("input")
+
+    input.type = "text"
+    input.id = attrid
+    input.className = "hiddeninput"
+    input.value = transferMsg
+    container.appendChild(input)
+
+    let textToCopy = document.querySelector(`#${attrid}`)
+    
+    text_to_copy.select(); 
+       
+    document.execCommand("copy")
+
+    text_to_copy.remove()
+}
 
 
 

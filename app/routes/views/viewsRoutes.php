@@ -36,6 +36,8 @@ $app->post('/result', function () {
 
 
 
+
+
 $app->get('/brisa', function () {	
 	
 	

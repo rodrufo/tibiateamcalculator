@@ -204,8 +204,12 @@ header h1::after {
   
 }
 
+.whoandhowmuch{
+  margin-bottom: 5px;
+}
 .howmuch-to-pay{
   color: #ca7474;
+  
 }
 
 .payer{
@@ -215,3 +219,17 @@ header h1::after {
 .receiver{
   font-weight: bold;
 }
+.copyToClipboard{
+  padding: 4px;
+  margin-left: 5px;
+  cursor: pointer;
+
+}
+
+.copyToClipboard:hover {
+
+  animation: nono 300ms;
+	animation-iteration-count: 1;
+
+}
+

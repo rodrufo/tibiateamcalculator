@@ -21,7 +21,7 @@
         <h3>Os seguintes pagamentos devem ser feitos: </h3><br>
         {loop="$sessiondata.payments"}
 
-            <li class="whoandhowmuch"> <span class="payer">{$value.payer}</span> deve pagar <span class="howmuch-to-pay">{$value.value}</span> para <span class="receiver">{$value.receiver}</span>  ( transfer {$value.value} to {$value.receiver} )</li>            
+            <li class="whoandhowmuch"> <span class="payer">{$value.payer}</span> deve pagar <span class="howmuch-to-pay">{$value.value}</span> para <span class="receiver">{$value.receiver}</span>  ( transfer {$value.value} to {$value.receiver} ) <button class="copyToClipboard" value="transfer {$value.value} to {$value.receiver}">Copiar</button></li>            
             
         {/loop}
     </ul>

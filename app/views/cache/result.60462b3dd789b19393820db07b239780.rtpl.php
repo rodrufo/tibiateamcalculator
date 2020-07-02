@@ -13,7 +13,7 @@
          O prejuízo total foi de <span class="waste"> <?php echo number_format($sessiondata["totalbalance"]); ?>  </span> e o individual de <span class="waste"><?php echo number_format($sessiondata["individualBalance"]); ?></span>
     <?php } ?>       
 
-   </div> <br>
+   </div> 
 
    <div class="calculator-payments">
 
@@ -21,7 +21,7 @@
         <h3>Os seguintes pagamentos devem ser feitos: </h3><br>
         <?php $counter1=-1;  if( isset($sessiondata["payments"]) && ( is_array($sessiondata["payments"]) || $sessiondata["payments"] instanceof Traversable ) && sizeof($sessiondata["payments"]) ) foreach( $sessiondata["payments"] as $key1 => $value1 ){ $counter1++; ?>
 
-            <li class="whoandhowmuch"> <span class="payer"><?php echo htmlspecialchars( $value1["payer"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span> deve pagar <span class="howmuch-to-pay"><?php echo htmlspecialchars( $value1["value"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span> para <span class="receiver"><?php echo htmlspecialchars( $value1["receiver"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>  ( transfer <?php echo htmlspecialchars( $value1["value"], ENT_COMPAT, 'UTF-8', FALSE ); ?> to <?php echo htmlspecialchars( $value1["receiver"], ENT_COMPAT, 'UTF-8', FALSE ); ?> )</li>            
+            <li class="whoandhowmuch"> <span class="payer"><?php echo htmlspecialchars( $value1["payer"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span> deve pagar <span class="howmuch-to-pay"><?php echo htmlspecialchars( $value1["value"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span> para <span class="receiver"><?php echo htmlspecialchars( $value1["receiver"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>  ( transfer <?php echo htmlspecialchars( $value1["value"], ENT_COMPAT, 'UTF-8', FALSE ); ?> to <?php echo htmlspecialchars( $value1["receiver"], ENT_COMPAT, 'UTF-8', FALSE ); ?> ) <button class="copyToClipboard" value="transfer <?php echo htmlspecialchars( $value1["value"], ENT_COMPAT, 'UTF-8', FALSE ); ?> to <?php echo htmlspecialchars( $value1["receiver"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">Copiar</button></li>            
             
         <?php } ?>
     </ul>
