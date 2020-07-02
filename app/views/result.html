@@ -1,0 +1,100 @@
+<section id="container"></section>
+
+
+<div class="calculator-result">
+    <h1>Resultado:</h1>
+    
+   <div class="calculator-balance">
+
+    {if="$sessiondata.totalbalance > 0"}
+         <h3>O lucro total foi de <span class="profit">{function="number_format($sessiondata.totalbalance)"} </span> e o individual de <span class="profit">{function="number_format($sessiondata.individualBalance)"}</span></h3><br>
+
+    {else}
+         O prejuízo total foi de <span class="waste"> {function="number_format($sessiondata.totalbalance)"}  </span> e o individual de <span class="waste">{function="number_format($sessiondata.individualBalance)"}</span>
+    {/if}       
+
+   </div> 
+
+   <div class="calculator-payments">
+
+    <ul>
+        <h3>Os seguintes pagamentos devem ser feitos: </h3><br>
+        {loop="$sessiondata.payments"}
+
+            <li class="whoandhowmuch"> <span class="payer">{$value.payer}</span> deve pagar <span class="howmuch-to-pay">{$value.value}</span> para <span class="receiver">{$value.receiver}</span>  ( transfer {$value.value} to {$value.receiver} )</li>            
+            
+        {/loop}
+    </ul>
+
+   </div><br>
+
+   <h2>Lista dos TOP</h2>
+   <div class="topdata">
+
+    
+
+        <div class="top toploot">
+            <h3>Quem pegou mais loot</h3>
+            {loop="$toploot"}
+
+            <li>{$value.name}: {if="$value.loot <= 0"} <span class="waste">{$value.loot}</span> {else}<span class="profit">{$value.loot} {/if} </li>    
+
+            {/loop}
+
+        </div>
+
+        <div class="top topsupplies">
+            <h3>Quem gastou mais:</h3>
+            {loop="$topsupplies"}
+
+            <li>{$value.name}:  {$value.supplies} </li>    
+
+            {/loop}
+
+        </div>
+
+        <div class="top topbalance">
+            <h3>Quem tem o melhor balance:</h3>
+            {loop="$topbalance"}
+
+            <li>{$value.name}:  {if="$value.balance <= 0"} <span class="waste">{$value.balance}</span> {else}<span class="profit">{$value.balance} {/if} </li>    
+
+            {/loop}
+
+        </div>
+
+        <div class="top topdamage">
+            <h3>Quem deu mais dano:</h3>
+
+            {loop="$topdamage"}
+
+            <li>{$value.name}: {$value.damage} </li>    
+
+            {/loop}
+
+        </div>
+
+
+        <div class=" top tophealing">
+            <h3>Quem curou mais:</h3>
+
+            {loop="$tophealing"}
+
+            <li>{$value.name}: {$value.healing} </li>    
+
+            {/loop}
+
+        </div>   
+        
+       
+    
+
+
+   </div>
+
+   
+
+</div>
+
+
+</section>

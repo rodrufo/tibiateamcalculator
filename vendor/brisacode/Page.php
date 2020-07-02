@@ -5,7 +5,7 @@ namespace brisacode;
 use Rain\Tpl;
 
 
-class page{
+class Page{
 
     private $header;
     private $footer;
@@ -18,8 +18,8 @@ class page{
         $this->footer = $footer;
 
         $config = array(
-            "tpl_dir"       => "src/views/",
-            "cache_dir"     => "src/views/cache",
+            "tpl_dir"       => "app/views/",
+            "cache_dir"     => "app/views/cache/",
             "debug"         =>true
         );
 
@@ -43,7 +43,7 @@ class page{
     }
 
 
-    public function gerarPagina($pagina,  $opts = [], $loop = [], $returnHTML = false)
+    public function Draw($pagina,  $opts = [], $loop = [], $returnHTML = false)
     {
 
         if (count($opts) > 0) {
