@@ -9,7 +9,8 @@ $app->get('/', function () {
 
 	$page = new page();	
 	$page->draw("home");
-
+        if (isset($_GET['error']) && $_GET['error'] == 500)
+            echo '<script>alert("Desculpe, ocorreu um erro interno. Por favor, tente novamente.");</script>';
 });
 
 
@@ -17,9 +18,16 @@ $app->post('/result', function () {
 
 	$data = $_POST['partyanalyser'];
 
-	$result = new TibiaCalculator($data);
+        try {
+            $result = new TibiaCalculator($data);
+
+        } catch (Exception $e) {
+            header('Location: /?error=500');
+            exit;
+        }
 
 	//echo json_encode( $result->getTopData() );
+        
 	
 	$page = new page([
 		'sessiondata'=>$result->getPayments(),
@@ -28,8 +36,7 @@ $app->post('/result', function () {
 		'topbalance'=>$result->getTopListBalance(),
 		'topdamage'=>$result->getTopListDamage(),
 		'tophealing'=>$result->getTopListHealing()
-	]);	
-
+	]);
 	$page->draw("result");
 
 });
