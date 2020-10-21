@@ -21,11 +21,11 @@
         <h3>Os seguintes pagamentos devem ser feitos: </h3><br>
         {loop="$sessiondata.payments"}
 
-            <li class="whoandhowmuch"> <span class="payer">{$value.payer}</span> deve pagar <span class="howmuch-to-pay">{$value.value}</span> para <span class="receiver">{$value.receiver}</span>  ( transfer {$value.value} to {$value.receiver} ) <button class="copyToClipboard" value="transfer {$value.value} to {$value.receiver}">Copiar</button></li>            
+            <li class="whoandhowmuch"> <span class="payer">{$value.payer}</span>: transfer {$value.value} to {$value.receiver} <button class="copyToClipboard" value="transfer {$value.value} to {$value.receiver}">Copiar</button></li>            
             
         {/loop}
 
-        <button id="copyAll" class="copyAll" value="{loop="$sessiondata.payments"} {$value.payer} para {$value.receiver} ( transfer {$value.value} to {$value.receiver} )&#13;&#10;{/loop}">Copiar Todos</button>
+        <button id="copyAll" class="copyAll" value="{loop="$sessiondata.payments"} {$value.payer}: transfer {$value.value} to {$value.receiver} &#13;&#10;{/loop}">Copiar Todos</button>
     </ul>
 
    </div><br>
@@ -56,7 +56,7 @@
         </div>
 
         <div class="top topbalance">
-            <h3>Quem tem o melhor balance:</h3>
+            <h3>Quem teve o melhor balance:</h3>
             {loop="$topbalance"}
 
             <li>{$value.name}:  {if="$value.balance <= 0"} <span class="waste">{$value.balance}</span> {else}<span class="profit">{$value.balance} {/if} </li>    

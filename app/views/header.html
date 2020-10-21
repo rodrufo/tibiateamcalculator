@@ -7,11 +7,16 @@
         <link rel="stylesheet" href="/assets/css/main.css">
     </head>
     <body >
-        <header >            
+        <header> 
+            <img src="/src/images/brisa.png" alt="Guild Brisa">
             <h1 class="header-tittle">Tibia Team Calculator</h1>     
             
             
-            
+            <nav id="menu">
+                <a href="/">home</a>
+                <a href="/brisa">manifesto</a>
+                <a href="/boss">regras boss</a>
+            </nav>
         </header>
         
 

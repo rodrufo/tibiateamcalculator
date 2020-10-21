@@ -11,8 +11,8 @@
 
 
 @font-face {
-  font-family: Handlee-Regular;
-  src: url('/assets/fonts/Handlee-Regular.ttf');
+    font-family: Handlee-Regular;
+    src: url('/assets/fonts/Handlee-Regular.ttf');
 }
 
 
@@ -36,8 +36,19 @@ body{
     width: 1366px;
     margin: 0 auto;    
     background-color: #23272a;
-    color: #ffff;
+    color: #ffffff;
     font-family: ShadowsIntoLight;
+}
+
+header{
+    position: relative;
+}
+
+header img {
+    width: 5%;
+    position: absolute;
+    left: 31%;
+    top: 10%;
 }
 
 header h1{
@@ -47,46 +58,73 @@ header h1{
 }
 
 
-
 header h1::after {
     content: "By Guild Brisa";
     position: relative;
     font-size: 15pt;
     top: 29px;
     right: 119px;
-  }
+}
 
-  figcaption{
+#menu {
+    text-align: center;
+    margin-top: 2%;
+    font-size: 1.4em;
+}
+
+section {
+    width: 70%;
+    margin: auto;
+}
+
+section.regra {
+    margin-top: 2%;
+    font-family: arial;
+}
+
+section.regra h4, section.regra h1 {
+    margin: 2% 0;
+}
+section.regra p {
+    margin: 1% 0;
+    font-size: 1em;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+figcaption{
     display: none;
-  }
+}
 
-  figure{
+figure{
     width: 50%;
     margin: 0 auto;
     text-align: center;
     margin-top: 3%;
-  }
-  
-  img{
+}
+
+/*  img{
       width: 70%;
-  }
+  }*/
 
-  .arrow{
-      width: 10%;
-  }
+.arrow{
+    width: 10%;
+}
 
-  .datainput{
-    
+.datainput{
+
     display: flex;
     flex-direction: column;
-  }
+}
 
-  .wheretoinsert{
-      text-align: center;
-      font-size: 40pt;
-  }
+.wheretoinsert{
+    text-align: center;
+    font-size: 40pt;
+}
 
-  .wheretoinsert::after{
+.wheretoinsert::after{
     content: "";
     background-image: url(/src/images/fancy-arrow-png-9.png);
     display: inline-block;
@@ -97,76 +135,76 @@ header h1::after {
     position: absolute;
     margin: 55px 0 0 -68px;
 
-  }
+}
 
-  form{
+form{
     text-align: center;
-  }
+}
 
-  .datainput{
+.datainput{
     width: 50%;
     margin: 0 auto;
     margin-top: 70px;
-  }
+}
 
-  textarea{
+textarea{
     padding: 5px;
     box-shadow: 10px 7px 30px rgba(0,0,0,.1);
     color: white;
     background-color: #5b666d;
     width: 100%;
-  }
+}
 
-  #btn-calculator{
-      padding: 5px;
-      margin: 0 auto;
-      margin-top: 15px;
-      width: 50%;
-      background-color: #4e5d8b;
-      font-family: ShadowsIntoLight;
-      font-size: 24pt;
-      color: white;
-     
-  }
+#btn-calculator{
+    padding: 5px;
+    margin: 0 auto;
+    margin-top: 15px;
+    width: 50%;
+    background-color: #4e5d8b;
+    font-family: ShadowsIntoLight;
+    font-size: 24pt;
+    color: white;
 
-  #btn-calculator:hover{
+}
+
+#btn-calculator:hover{
     font-weight: bolder;
     cursor: pointer;
-  }
-  
-  ::placeholder { 
+}
+
+::placeholder { 
     color: white;
     opacity: 1; 
     font-family: ShadowsIntoLight;
     font-size: 18pt;
-  }
+}
 
-  footer{
-      margin-top: 40px;
-      text-align: center;
-  }
-  .footerimage{
+footer{
+    margin-top: 40px;
     text-align: center;
-  }
-  .footerimage img{
+}
+.footerimage{
+    text-align: center;
+}
+.footerimage img{
 
     width: 30%;
-    
-  }
 
-  p{
-      font-size: 18pt;
-  }
+}
+
+p{
+    font-size: 18pt;
+}
 
 
 
-  .error{
+.error{
     border: 1px solid red;
     animation: nono 300ms;
-	  animation-iteration-count: 2;
-  }
+    animation-iteration-count: 2;
+}
 
-  @keyframes nono{
+@keyframes nono{
     0%{
         transform: translateX(0);
     }
@@ -182,57 +220,57 @@ header h1::after {
 }
 
 .calculator-result{
-  font-family: Handlee-Regular;
-  font-size: 16pt;
-  text-align: center;
-  margin-top: 40px;
+    font-family: Handlee-Regular;
+    font-size: 16pt;
+    text-align: center;
+    margin-top: 40px;
 }
 
 .topdata{
-  display: flex;
-  justify-content: space-around;
+    display: flex;
+    justify-content: space-around;
 }
 
 .profit{
-  color: rgb(30, 156, 30);
-  
-  
+    color: rgb(30, 156, 30);
+
+
 }
 .waste{
-  color: red;
-  
-  
+    color: red;
+
+
 }
 
 .whoandhowmuch{
-  margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 .howmuch-to-pay{
-  color: #ca7474;
-  
+    color: #ca7474;
+
 }
 
 .payer{
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .receiver{
-  font-weight: bold;
+    font-weight: bold;
 }
 .copyToClipboard, .copyAll{
-  padding: 4px;
-  margin-left: 5px;
-  cursor: pointer;
-  font-family: Handlee-Regular;
-  font-size: 12pt;
-  font-weight: bold;
+    padding: 4px;
+    margin-left: 5px;
+    cursor: pointer;
+    font-family: Handlee-Regular;
+    font-size: 12pt;
+    font-weight: bold;
 
 }
 
 .copyToClipboard:hover, .copyAll:hover {
 
-  animation: nono 300ms;
-	animation-iteration-count: 1;
+    animation: nono 300ms;
+    animation-iteration-count: 1;
 
 }
 

@@ -45,5 +45,12 @@ $app->get('/brisa', function () {
 	$page->draw("brisa");
 
 });
+$app->get('/boss', function () {	
+	
+	
+	$page = new page();	
+	$page->draw("boss");
+
+});
 
 

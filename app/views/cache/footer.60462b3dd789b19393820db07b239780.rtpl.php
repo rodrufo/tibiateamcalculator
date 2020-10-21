@@ -17,7 +17,7 @@
     <br><br>
 
     <p>Gostou do Projeto? Divulgue-o para seus amigos.</p>
-    <p>Quer apoiar o projeto? Envie sua doação de tibia coins para </p>
+    <p>Quer apoiar o projeto? Envie sua doação de tibia coins ou <a href="https://streamlabs.com/livedopave/" target="_blank">dinheiro</a>. </p>
 
 
 
