@@ -3,6 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <!--meta name="viewport" content="width=device-width, initial-scale=1.0"-->
+        <link type="image/x-icon" href="/src/images/favicon.ico" rel="icon">
+        <link type="image/x-icon" href="/src/images/favicon.ico" rel="shortcut icon">
         <title>Tibia Team Calculator</title>        
         <link rel="stylesheet" href="/assets/css/main.css">
     </head>
