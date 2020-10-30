@@ -72,6 +72,10 @@ header h1::after {
     font-size: 1.4em;
 }
 
+nav#menu a {
+    font-family: verdana;
+}
+
 section {
     width: 70%;
     margin: auto;
