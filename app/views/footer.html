@@ -10,7 +10,7 @@
     </div>
 
     <h1>Desenvolvido por Guild Brisa de Kalibra<h1>
-    <h2>Desenvolcedores</h2>
+    <h2>Desenvolvedores</h2>
     <p>Rodolfo Paolucci | <a href="https://www.twitch.tv/livedopave/" target="_blank">twitch.tv</a></p>
     <p>Yure'S | <a href="https://github.com/jon-by" target="_blank">GitHub</a></p>
     
