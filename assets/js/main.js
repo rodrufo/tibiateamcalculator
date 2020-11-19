@@ -3,6 +3,13 @@ const analyserData = document.querySelector("#partyanalyser")
 const copyToElement = document.querySelectorAll(".copyToClipboard")
 const balanceMsg = document.querySelector(".calculator-balance")
 const copyAll = document.querySelector("#copyAll")
+const copyAllTop = document.querySelector("#copyAllTop")
+
+copyAllTop.addEventListener("click", element => {
+    
+    copyToClipboard(copyAllTop.value, true)
+
+})
 
 copyAll.addEventListener("click", element => {
     

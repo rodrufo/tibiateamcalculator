@@ -21,16 +21,24 @@
         <h3>Os seguintes pagamentos devem ser feitos: </h3><br>
         {loop="$sessiondata.payments"}
 
-            <li class="whoandhowmuch"> <span class="payer">{$value.payer}</span>: transfer {$value.value} to {$value.receiver} <button class="copyToClipboard" value="transfer {$value.value} to {$value.receiver}">Copiar</button></li>            
+            <li class="whoandhowmuch"> <span class="payer">{$value.payer}</span>: transfer {$value.value} to {$value.receiver} <!--<button class="copyToClipboard" value="transfer {$value.value} to {$value.receiver}">Copiar</button>--></li>            
             
         {/loop}
 
         <button id="copyAll" class="copyAll" value="{loop="$sessiondata.payments"} {$value.payer}: transfer {$value.value} to {$value.receiver} &#13;&#10;{/loop}">Copiar Todos</button>
+        <button id="copyAllTop" class="copyAll" value="
+{loop="$sessiondata.payments"} {$value.payer}: transfer {$value.value} to {$value.receiver} &#13;&#10;{/loop}
+&#13;&#10;Quem deu mais dano: &#13;&#10;&#13;&#10;{loop="$topdamage"} {$value.name}: {$value.damage} &#13;&#10;{/loop}
+Quem curou mais: &#13;&#10;&#13;&#10;{loop="$tophealing"} {$value.name}: {$value.healing} &#13;&#10;{/loop}               
+Quem gastou mais: &#13;&#10;&#13;&#10;{loop="$topsupplies"} {$value.name}: {$value.supplies} &#13;&#10;{/loop}
+Quem pegou mais loot: &#13;&#10;&#13;&#10;{loop="$toploot"} {$value.name}: {$value.loot} &#13;&#10;{/loop}
+Quem teve o melhor balance: &#13;&#10;&#13;&#10;{loop="$topbalance"} {$value.name}: {$value.balance} &#13;&#10;{/loop}
+                ">Copiar Todos + Listas dos TOP</button>
     </ul>
 
-   </div><br>
+   </div><br> 
 
-   <h2>Lista dos TOP</h2>
+   <h2>Listas dos TOP</h2>
    <div class="topdata">
 
     
