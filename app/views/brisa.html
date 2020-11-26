@@ -40,6 +40,12 @@
     </ul>
 
     <p>O foco é a manutenção do bem-estar do convívio. Cada caso será discutido e decidido com o coletivo da Guild.</p>
+    
+    <h4>🥺 4) Política de exclusão</h4>
+    
+    <p>Será indicativo de exclusão da guild o fato do membro estar ativo no jogo e não participar de nenhuma atividade coletiva por mais de 1 mês como: bosses, acessos, conversas ativas no teamspeak ou grupos de whatsapp.</p>
+    <p>Protocolo: Conversa com um dos líderes. Se a falta de envolvimento permanecer por 1 semana, a liderança avaliará a necessidade de exclusão.</p>
+    <p>Retired: Aqueles que por qualquer razão estiverem afastados do jogo por um tempo, mas ainda assim manifestarem interesse em permanecer na guild, serão mantidos na categoria "Vento Levou".</p>
 
     <h4>Esta guild se constrói no coletivo. Se tiver alguma sugestão, fique à vontade para compatilhar.</h4>
 
