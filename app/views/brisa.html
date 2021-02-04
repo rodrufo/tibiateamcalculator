@@ -4,7 +4,7 @@
 
     <p>A Guild Brisa é focada em cooperação desde a líder ao membro mais recente. Temos foco em bosses e quests compartilhados com o servidor, seguindo o princípio de divisão tanto de prejuízo quanto de lucro. </p>
 
-    <p>O objetivo deste Manifesto é orientar todos os membros sobre 3 princípios básicos:</p>
+    <p>O objetivo deste Manifesto é orientar todos os membros sobre 5 princípios:</p>
 
     <h4>💙 1) Respeito </h4>
 
@@ -43,10 +43,23 @@
     
     <h4>🥺 4) Política de exclusão</h4>
     
-    <p>Será indicativo de exclusão da guild o fato do membro estar ativo no jogo e não participar de nenhuma atividade coletiva por mais de 1 mês como: bosses, acessos, conversas ativas no teamspeak ou grupos de whatsapp.</p>
-    <p>Protocolo: Conversa com um dos líderes. Se a falta de envolvimento permanecer por 1 semana, a liderança avaliará a necessidade de exclusão.</p>
+    <p>Duas situações são indicativas de exclusão dos membros da Brisa.</p>
+    
+    <p>A primeira é o membro estar ativo no jogo e não participar de nenhuma atividade coletiva por mais de 1 mês como: bosses, acessos, conversas ativas no teamspeak ou grupos de whatsapp. Neste caso, um dos líderes ou vice-líderes deverá conversar com o membro. Se a falta de envolvimento permanecer por 1 semana, o membro será excluído da guild.</p>
+    
+    <p>A segunda situação é não querer estar no grupo da Brisa no whatsapp ou sair do grupo sem comunicar nenhum dos líderes ou vice-líderes. Neste caso, o membro será excluído da guild.</p>
+    
     <p>Retired: Aqueles que por qualquer razão estiverem afastados do jogo por um tempo, mas ainda assim manifestarem interesse em permanecer na guild, serão mantidos na categoria "Vento Levou".</p>
 
+    <h4>🧙‍♀️ 5) Vice-Líderes</h4>
+    
+    <p>Estamos sempre focados em propor o maior número de ações possível com qualidade (boss, quest, acessos, etc), atingindo todas as faixas de level dos membros da guild. Nossa proposta somente é possível com a colaboração de pessoas dispostas a dedicar tempo e atenção na organização e na execução dessas ações.</p>
+    
+    <p>Desta forma, vice líderes são escolhidos por disposição para o trabalho na guild. Qualquer membro que tenha tempo e disposição para organizar ações coletivas, seguindo TODOS os princípios desse manifesto, pode puxar listas nos grupos de whatsapp da guild. Se obtiver sucesso e for de seu interesse, o membro será convidado a se tornar vice líder e ascender para “Brisadao”.</p>
+    
+    <p>Os vice líderes da Brisa assumem atribuições específicas e responsabilidades. Ressaltamos que o bom relacionamento interpessoal é prioridade. Além disso, o apoio mútuo entre todos da liderança é uma premissa relevante, assim como priorizamos decisões coletivas ao invés de individuais.</p>
+    
+    <br>
     <h4>Esta guild se constrói no coletivo. Se tiver alguma sugestão, fique à vontade para compatilhar.</h4>
 
 </section>

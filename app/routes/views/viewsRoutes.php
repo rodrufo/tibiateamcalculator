@@ -46,18 +46,16 @@ $app->post('/result', function () {
 
 
 $app->get('/brisa', function () {	
-	
-	
 	$page = new page();	
 	$page->draw("brisa");
-
 });
 $app->get('/boss', function () {	
-	
-	
 	$page = new page();	
 	$page->draw("boss");
-
+});
+$app->get('/videos', function () {	
+	$page = new page();	
+	$page->draw("videos");
 });
 
 

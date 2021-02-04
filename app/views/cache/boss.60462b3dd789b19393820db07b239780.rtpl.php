@@ -21,6 +21,7 @@
     </p>
     <p>7. Caso a print não seja enviada corretamente, o time do Boss deverá decidir o quê fazer. Se não houver consenso, líderes ou vice líderes da guild Brisa presente devem tomar uma decisão sobre o caso.
     </p>
+    <p>8. Política de exclusão: Será indicativo de exclusão do grupo o fato do membro não participar de nenhuma atividade coletiva por mais de 1 mês como: bosses, acessos e demais ações propostas no grupo.</p>
     <h1>Reglas de Boss Open Group (21/10/2020)</h1>
     <h4>Las siguientes reglas complementan el manifiesto y aplican al grupo de bosses que organiza la guild en whatsapp.</h4>
     <p>1. Las listas de King Zelos se pasarán la noche anterior, justo después de que termine el Zelos del día.</p>
@@ -43,4 +44,5 @@
     </p>
     <p>7. Si la print no se envía correctamente, el equipo de Boss debe decidir qué hacer. Si no hay consenso, los líderes o vice líderes del guild Brisa presentes deben tomar una decisión sobre el caso.
     </p>
+    <p>8. Política de exclusión: Será indicativo de exclusión del grupo si el socio no participa en ninguna actividad colectiva durante más de 1 mes, tales como: boss, accesos y otras acciones propuestas en el grupo.</p>
 </section>

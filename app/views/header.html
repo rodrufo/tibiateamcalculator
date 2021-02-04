@@ -18,6 +18,7 @@
                 <a href="/">home</a>
                 <a href="/brisa">manifesto</a>
                 <a href="/boss">regras boss</a>
+                <a href="/videos">vídeos</a>
             </nav>
         </header>
         
