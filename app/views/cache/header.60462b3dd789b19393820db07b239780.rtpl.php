@@ -16,9 +16,14 @@
             
             <nav id="menu">
                 <a href="/">home</a>
+                <span>.</span>
                 <a href="/brisa">manifesto</a>
+                <span>.</span>
                 <a href="/boss">regras boss</a>
+                <span>.</span>
                 <a href="/videos">vídeos</a>
+                <span>.</span>
+                <a href="/imbuements">imbuements</a>
             </nav>
         </header>
         

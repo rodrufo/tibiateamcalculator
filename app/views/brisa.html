@@ -59,7 +59,7 @@
     
     <p>Os vice líderes da Brisa assumem atribuições específicas e responsabilidades. Ressaltamos que o bom relacionamento interpessoal é prioridade. Além disso, o apoio mútuo entre todos da liderança é uma premissa relevante, assim como priorizamos decisões coletivas ao invés de individuais.</p>
     
-    <br>
+
     <h4>Esta guild se constrói no coletivo. Se tiver alguma sugestão, fique à vontade para compatilhar.</h4>
 
 </section>

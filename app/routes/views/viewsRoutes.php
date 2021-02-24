@@ -57,5 +57,9 @@ $app->get('/videos', function () {
 	$page = new page();	
 	$page->draw("videos");
 });
+$app->get('/imbuements', function () {	
+	$page = new page();	
+	$page->draw("imbuements");
+});
 
 
