@@ -16,7 +16,7 @@ $(function () {
     }
 
     function showPrints(evt) {
-        selection.date = $(this).attr('id');
+        selection.date = $(this).val();
         $('#prints').html('<h3>Clique para aumentar/fechar uma print:</h3>');
 
         prints = [];
@@ -76,11 +76,16 @@ $(function () {
                 return 1;
             return 0;
         });
+        
+        html += '<select name="dates" id="dates">';
+        html += '<option value=""></option>';
 
         for (i = 0; i < dates.length; i++) {
             dataBr = dates[i].substring(8, 10) + '/' + dates[i].substring(5, 7) + '/' + dates[i].substring(0, 4);
-            html += '<a href="#" class="date" id="' + dates[i] + '">' + dataBr + '</a>';
+            html += '<option value="' + dates[i] + '">' + dataBr + '</option>';
         }
+        html += '</select>';
+        
         $('#dates').html(html);
         $('#loading').remove();
     }
@@ -143,7 +148,7 @@ $(function () {
     $('body').on("click", ".viewPrint", function(){$(this).remove()});
     $('body').on("click", ".thumb", viewPrint);
     $('body').on("click", ".char", showDates);
-    $('body').on("click", ".date", showPrints);
+    $('body').on("change", "select#dates", showPrints);
     document.getElementById('files').addEventListener('change', showChars, false);
 
 });

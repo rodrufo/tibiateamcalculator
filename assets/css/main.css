@@ -301,7 +301,7 @@ p{
 }
 
 div.print {
-    
+
     float: left;
     overflow: auto;
     margin-right: 1%;
@@ -320,6 +320,13 @@ div.print span.legend {
     left: 15%;
     width: 70%;
     z-index: 1000;
-    
+
+}
+
+select {
+    color: white;
+    padding: 1%;
+    background-color: #5b666d; 
+    width: 15%;
 }
 
