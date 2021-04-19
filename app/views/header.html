@@ -7,6 +7,8 @@
         <link type="image/x-icon" href="/src/images/favicon.ico" rel="shortcut icon">
         <title>Tibia Team Calculator</title>        
         <link rel="stylesheet" href="/assets/css/main.css">
+        <script src="/assets/js/jquery-3.6.0.min.js"></script>
+        <script src="/assets/js/prints.js"></script>
     </head>
     <body >
         <header> 
@@ -24,6 +26,8 @@
                 <a href="/videos">vídeos</a>
                 <span>.</span>
                 <a href="/imbuements">imbuements</a>
+                <span>.</span>
+                <a href="/prints">prints</a>
             </nav>
         </header>
         

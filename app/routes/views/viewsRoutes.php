@@ -61,5 +61,9 @@ $app->get('/imbuements', function () {
 	$page = new page();	
 	$page->draw("imbuements");
 });
+$app->get('/prints', function () {	
+	$page = new page();	
+	$page->draw("prints");
+});
 
 

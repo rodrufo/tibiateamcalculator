@@ -82,17 +82,27 @@ section {
     margin: auto;
 }
 
+section section {
+    width: 100%;
+}
+
 section.regra {
     margin-top: 2%;
     font-family: arial;
+    overflow: auto;
 }
 
-section.regra h4, section.regra h1 {
+section.regra h4, section.regra h1, section.regra h3 {
     margin: 2% 0;
 }
 section.regra p {
     margin: 1% 0;
     font-size: 1em;
+}
+section.regra a {
+    margin-right: 2%;
+    font-family: verdana;
+    color: darkgoldenrod;
 }
 
 a:hover {
@@ -277,5 +287,39 @@ p{
     animation: nono 300ms;
     animation-iteration-count: 1;
 
+}
+
+.thumb {
+    width: 96%;
+    border: 1px solid darkgoldenrod;
+    margin: 1% 0;
+}
+
+#loading {
+    width: 10%;
+    float: left;
+}
+
+div.print {
+    
+    float: left;
+    overflow: auto;
+    margin-right: 1%;
+    width: 15%;
+    text-align: center;
+}
+
+div.print span.legend {
+    font-size: .7em;
+    font-weight: bold;
+}
+
+.viewPrint {
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    width: 70%;
+    z-index: 1000;
+    
 }
 
