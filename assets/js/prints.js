@@ -166,11 +166,15 @@ $(function () {
         html += '</select>';
         html += '<select name="types" id="types">';
         html += '<option value="">Tipo...</option>';
+        html += '<option value="Achievement">Achievement</option>';
         html += '<option value="BestiaryEntryCompleted">BestiaryEntryCompleted</option>';
         html += '<option value="BossDefeated">BossDefeated</option>';
         html += '<option value="DeathPvE">DeathPvE</option>';
+        html += '<option value="HighestDamageDealt">HighestDamageDealt</option>';
+        html += '<option value="HighestHealingDone">HighestHealingDone</option>';
         html += '<option value="Hotkey">Hotkey</option>';
         html += '<option value="LevelUp">LevelUp</option>';
+        html += '<option value="LowHealth">LowHealth</option>';
         html += '<option value="SkillUp">SkillUp</option>';
         html += '<option value="TreasureFound">TreasureFound</option>';
         html += '</select>';
